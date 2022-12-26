@@ -3,12 +3,12 @@
 	This file contains all the JavaScript functionality for Doodle Launcher
 */
 
-var VersionTitle = "Doodle Launcher Public Preview 4";
-var VersionNumber = "Preview 4";
-var ContinuityVersionNumber = "1.15"
-var BuildNumber = 4153;
+var VersionTitle = "Savings Tracker";
+var VersionNumber = "Public Preview 1";
+var ContinuityVersionNumber = "1.0"
+var BuildNumber = 1;
 var CopyrightTitle = "Content By ElmerF 2022";
-var ELMSUIVersion = "1.4.2";
+var ELMSUIVersion = "1.4.3";
 var CompilationDate = "December 1, 2022";
 var path = window.location.pathname;
 var PageName = path.split("/").pop();
@@ -64,7 +64,7 @@ function OnloadTasks(){
 	console.log("Welcome to "+VersionTitle+" "+VersionNumber+" ("+ContinuityVersionNumber+"). Copyright "+CopyrightTitle);
 	generate_Launcher_HeaderButtons(PageName);
 	switch (PageName){
-		case "DL_Main.html":
+		case "EST_Main.html":
 			pageProperty_enableGreetings = 1;
 			var pageProperty_showSidebarToggle = 0;
 			var pageProperty_enableSidebar = 0;
@@ -72,17 +72,17 @@ function OnloadTasks(){
 			var pageProperty_enableTabContainers = 0;
 			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
 			var pageProperty_enableCategoryNavigation = 0;
-			
+			document.getElementById("pageElement_QuickSearchBar").style.display = "none";
 			pageProperty_PageTitle = "Home";
 			check_Version();
-			Generator_Render_Categories();
+			// Generator_Render_Categories();
 			/*const SE_Array_Category_Index = ["fillerCategory", "TEST_Category_1", "TEST_Category_2", "TEST_Category_3", "Education", "Elmer Elmer", "Socials"];
 			localStorage.setItem(key_Index_Category, JSON.stringify(SE_Array_Category_Index));*/
 			hide_ToggleableElements();
 			setTimeout(start_Animations, 2500);
 			enableGreetings = 1;
 			
-			generate_ProfileSelector();
+			// generate_ProfileSelector();
 			if (Appearance_Behavior_BlurHomeWallpaper == true || Appearance_Behavior_BlurHomeWallpaper == "true"){
 				document.getElementById("pageElement_WallpaperBlur").style.display = "block";
 			} else {

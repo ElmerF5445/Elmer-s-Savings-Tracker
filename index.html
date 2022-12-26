@@ -20,17 +20,17 @@
 			
 			}
 		</style>
-		<link rel="stylesheet" href="Scripts/DL_Stylesheet.css">
-		<link rel="stylesheet" href="Scripts/DL_Stylesheet_Animations.css">
-		<link rel="stylesheet" href="Scripts/DL_Stylesheet_Reference.css">
-		<link rel="icon" type="image/png" href="Assets/Icons/favicon.png" sizes="96x96">
+		<link rel="stylesheet" href="Scripts/EST_Stylesheet.css">
+		<link rel="stylesheet" href="Scripts/EST_Stylesheet_Animations.css">
+		<link rel="stylesheet" href="Scripts/EST_Stylesheet_Reference.css">
+		<link rel="icon" type="image/png" href="Assets/Icons/icon_Coin.png" sizes="96x96">
 		<!-- Default intended fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=Roboto&display=swap" rel="stylesheet">
 	</head>
-	<body class="MainPage" onload="OnloadTasks(), Onboarding_CheckVersion()">
-		<script src="Scripts/DL_Javascript.js"></script>
+	<body class="MainPage" onload="window.location.href = 'ST_Main.html';">
+		<script src="Scripts/EST_Javascript.js"></script>
 		<div class="ErrorScreen_CSSFileMissing">
 			<h1 class="ErrorScreen_CSSFileMissing_Text">
 				Error - Important files are missing
@@ -86,16 +86,16 @@
 		</div>
 		<div class="LoadingScreen" id="LoadingScreen">
 			<div class="LoadingScreen_UpperSection" id="LoadingScreen_UpperSection">
-				<img class="LoadingScreen_Icon" src="Assets/Icons/favicon.png"></img>
+				<img class="LoadingScreen_Icon" src="Assets/Icons/icon_Coin.png"></img>
 				<h2 class="LoadingScreen_VersionTitle" id="versionTitle">
-					Doodle Launcher
+					Savings Tracker
 				</h2>
 				<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 			</div>
 			<div class="LoadingScreen_CopyrightSection" id="LoadingScreen_CopyrightSection">
 				
 				<!-- <h4 class="LoadingScreen_Text" id="LoadingScreen_Text"> -->
-					<!-- Building page... -->
+				<!-- Building page... -->
 				<!-- </h4> -->
 				<div style="display: flex; justify-content: center; align-items: center;">
 					<img class="LoadingScreen_Copyright_Logo" src="Assets/Icons/ContentByElmerF.png"></img>
@@ -149,7 +149,7 @@
 				<p class="General_Paragraph ExperimentSelector_Text" onclick="trigger_Close_ExperimentSelector(), changePage_Tasker()">
 					To-do List
 				</p>
-				<p class="General_Paragraph ExperimentSelector_Text" onclick="open_Subwindow('Confirmation_LaunchAllLinks')">
+				<p class="General_Paragraph ExperimentSelector_Text" onclick="open_Subwindow('Category_Launcher')">
 					Confirmation_LaunchAllLinks
 				</p>
 			</div>
@@ -548,22 +548,13 @@
 					</p>		
 					<ul class="General_Paragraph">
 						<li>
-							Added a way to re-order categories and shortcuts in Shortcut Editor. This is still experimental and may break unexpectedly. Please report any bug you may encounter.
+							Added an import and export shortcut system for Shortcut Editor.
 						</li>
 						<li>
-							Added the preset "Garden of Words" and "Underwater".
+							Added a "Welcome back" message on the home page.
 						</li>
 						<li>
-							Added wallpaper previews and a better preset selector tab on Settings > Appearance.
-						</li>
-						<li>
-							Added a "Go to Bottom" button that appears when the "Back to Top" button is hovered.
-						</li>
-						<li>
-							Added an "Open Category Navigation" button that appears when the "Back to Top" button is hovered.
-						</li>
-						<li>
-							Added a behavior setting for Shortcut Editor that lets you choose how windows are closed and how input fields are cleared.
+							Added an "Open all shortcuts" button on the Category Navigation sidebar. (Unblock pop-ups for DL_Main.html for this feature to work.)
 						</li>
 					</ul>
 					<p class="General_Paragraph">
@@ -571,49 +562,42 @@
 					</p>		
 					<ul class="General_Paragraph">
 						<li>
-							Reworked the shortcut generation system and the home page should start a little bit faster now.
+							Updated the update information screen.
 						</li>
 						<li>
-							Shortcut Editor Add Item subwindow will automatically close after creating an item by default.
+							Updated the loading screen to have a fade in animation and an updated layout.
 						</li>
 						<li>
-							Shortcut Editor input fields will automatically clear content after creating an item by default.
+							The loading screen text will now only appear once it has the proper values loaded.
 						</li>
 						<li>
-							The 6 checkboxes at the top of the Behavior tab in Settings > Behaviors had been moved to its own "Display" category.
+							The timer that dictates when the loading screen fades out will now only start counting once the rest of the system is done loading.
 						</li>
 						<li>
-							Presets now includes the wallpaper.
+							Header menu buttons now updates the cursor to a pointer when hovering over it.
 						</li>
 						<li>
-							Launcher will now check for internet connection every second instead of at every session.
+							Header buttons now relies on preset arrays to make content more dynamic.
 						</li>
 						<li>
-							Removed the version and copyright text from the Session Screen.
+							Removed the button instruction for Settings > Appearance > Text
 						</li>
 						<li>
-							Removed the backdrop filter on the loading screen and will now display a solid color instead of a blurred background.
+							Toast notifications now limit information that it can display.
 						</li>
 						<li>
-							The Category Navigation Sidebar now has a close button.
+							Toast notifications can be forcefully closed by clicking on it.
 						</li>
 						<li>
-							Changed the Information tab icon in Settings > Information
+							Toast notifications no longer fades a little bit when being hovered.
 						</li>
+					</ul>
+					<p class="General_Paragraph">
+						Experimental Feature
+					</p>		
+					<ul class="General_Paragraph">
 						<li>
-							Fixed toggleable elements not showing up on first click.
-						</li>
-						<li>
-							Fixed a bug where the opening animation doesn't play or bugs out.
-						</li>
-						<li>
-							Fixed a bug where more than one item is deleted at a time in some occasions on Shortcut Editor.
-						</li>
-						<li>
-							Fixed a bug where the default wallpaper doesn't show up when loading the default setting values.
-						</li>
-						<li>
-							Fixed a bug where default behaviors doesn't set properly when loading the launcher for the first time.
+							Added Pomodoro Technique Timer page.
 						</li>
 					</ul>
 				</div>
@@ -627,13 +611,13 @@
 		<!-- <div class="ITB_Container">
 			<div></div>
 			<div class="ITB_Header">
-				<h4 class="General_Title">
-					Test text
-				</h4>
+			<h4 class="General_Title">
+			Test text
+			</h4>
 			</div>
 			<div class="ITB_MainContent">
-				<iframe src="https://cbelmerf.wixsite.com/content" class="ITB_MainContent_IFrame" style="width: 100%; height: 100%">
-				</iframe>
+			<iframe src="https://cbelmerf.wixsite.com/content" class="ITB_MainContent_IFrame" style="width: 100%; height: 100%">
+			</iframe>
 			</div>
 		</div> -->
 		
@@ -641,53 +625,53 @@
 		<!-- <div class="Sidebar_TimeDate_Container" id="pageElement_Sidebar_TimeDate"> -->
 		<!-- <div></div> -->
 		<!-- <div class="Sidebar_TimeDate"> -->
-			<!-- <div class="Sidebar_TimeDate_Time"> -->
-				<!-- <h1 class="Sidebar_TimeDate_Time_Text" id="Sidebar_Clock_Time"> -->
-					<!-- 11:01 PM -->
-				<!-- </h1> -->
-				<!-- <p class="Sidebar_TimeDate_Date_Text" id="Sidebar_Clock_Date"> -->
-					<!-- Sunday, 10/9/2022 -->
-				<!-- </p> -->
-			<!-- </div> -->
-			<!-- <div class="wrapper"> -->
-				<!-- <div class="container-calendar"> -->
-					<!-- <div class="container-calendar-controls"> -->
-						<!-- <button id="previous" onclick="previous()">&#8249;</button> -->
-						<!-- <h3 id="monthAndYear"></h3> -->
-						<!-- <div class="button-container-calendar"> -->
-							
-							
-						<!-- </div> -->
-						<!-- <button id="next" onclick="next()">&#8250;</button> -->
-					<!-- </div> -->
-					<!-- <table class="table-calendar" id="calendar" data-lang="en"> -->
-						<!-- <thead id="thead-month"></thead> -->
-						<!-- <tbody id="calendar-body"></tbody> -->
-					<!-- </table> -->
-					<!-- <div class="footer-container-calendar"> -->
-						<!-- <label for="month" class="footer-container-calendar-jumpto">Jump To: </label> -->
-						<!-- <select id="month" onchange="jump()"> -->
-							<!-- <option value=0>Jan</option> -->
-							<!-- <option value=1>Feb</option> -->
-							<!-- <option value=2>Mar</option> -->
-							<!-- <option value=3>Apr</option> -->
-							<!-- <option value=4>May</option> -->
-							<!-- <option value=5>Jun</option> -->
-							<!-- <option value=6>Jul</option> -->
-							<!-- <option value=7>Aug</option> -->
-							<!-- <option value=8>Sep</option> -->
-							<!-- <option value=9>Oct</option> -->
-							<!-- <option value=10>Nov</option> -->
-							<!-- <option value=11>Dec</option> -->
-						<!-- </select> -->
-						<!-- <select id="year" onchange="jump()"></select>        -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<!-- <p class="General_Paragraph"> <a href="https://www.codehim.com/date-time/dynamic-calendar-in-javascript-with-example/"> Credits </a> </p> -->
-				<!-- </div> -->
+		<!-- <div class="Sidebar_TimeDate_Time"> -->
+		<!-- <h1 class="Sidebar_TimeDate_Time_Text" id="Sidebar_Clock_Time"> -->
+		<!-- 11:01 PM -->
+		<!-- </h1> -->
+		<!-- <p class="Sidebar_TimeDate_Date_Text" id="Sidebar_Clock_Date"> -->
+		<!-- Sunday, 10/9/2022 -->
+		<!-- </p> -->
 		<!-- </div> -->
-	<!-- </div> -->
-	
+		<!-- <div class="wrapper"> -->
+		<!-- <div class="container-calendar"> -->
+		<!-- <div class="container-calendar-controls"> -->
+		<!-- <button id="previous" onclick="previous()">&#8249;</button> -->
+		<!-- <h3 id="monthAndYear"></h3> -->
+		<!-- <div class="button-container-calendar"> -->
+		
+		
+		<!-- </div> -->
+		<!-- <button id="next" onclick="next()">&#8250;</button> -->
+		<!-- </div> -->
+		<!-- <table class="table-calendar" id="calendar" data-lang="en"> -->
+		<!-- <thead id="thead-month"></thead> -->
+		<!-- <tbody id="calendar-body"></tbody> -->
+		<!-- </table> -->
+		<!-- <div class="footer-container-calendar"> -->
+		<!-- <label for="month" class="footer-container-calendar-jumpto">Jump To: </label> -->
+		<!-- <select id="month" onchange="jump()"> -->
+		<!-- <option value=0>Jan</option> -->
+		<!-- <option value=1>Feb</option> -->
+		<!-- <option value=2>Mar</option> -->
+		<!-- <option value=3>Apr</option> -->
+		<!-- <option value=4>May</option> -->
+		<!-- <option value=5>Jun</option> -->
+		<!-- <option value=6>Jul</option> -->
+		<!-- <option value=7>Aug</option> -->
+		<!-- <option value=8>Sep</option> -->
+		<!-- <option value=9>Oct</option> -->
+		<!-- <option value=10>Nov</option> -->
+		<!-- <option value=11>Dec</option> -->
+		<!-- </select> -->
+		<!-- <select id="year" onchange="jump()"></select>        -->
+		<!-- </div> -->
+		<!-- </div> -->
+		<!-- <p class="General_Paragraph"> <a href="https://www.codehim.com/date-time/dynamic-calendar-in-javascript-with-example/"> Credits </a> </p> -->
+		<!-- </div> -->
+		<!-- </div> -->
+		<!-- </div> -->
+		
 		
 		
 		<div class="Header_Greeting">
@@ -696,26 +680,51 @@
 			</h1>
 		</div>
 		
+		<div class="Category_Launcher_Container" id="subwindow_Category_Launcher">
+			
+			<div class="Category_Launcher_Window" id="pageElement_Category_Launcher_List">
+				<div class="Category_Launcher_Title">
+					<h2 class="Category_Launcher_Title_Text">
+						Launch a category
+					</h2>
+					<img src="Assets/Icons/icon_close.png" class="Category_Launcher_Title_Close" onclick="close_Subwindow('Category_Launcher')">
+				</div>
+				<ul class="General_Paragraph">
+					<li>
+						This will launch all the shortcuts in the category you select.
+					</li>
+					<li>
+						Opening multiple tabs at once may cause significant performance slowdowns on your browser.
+					</li>
+					<li>
+						Make sure you disable "Pop-up blocking" on this page only.
+					</li>
+				</ul>
+				
+				
+			</div>
+		</div>
+		
 		<div class="Confirmation_Blur" id="subwindow_Confirmation_LaunchAllLinks">
-				<div class="Confirmation">
-					<h3 class="Confirmation_Title">
-						Are you sure?
-					</h3>
-					<div class="Confirmation_Content">
-						<p class="General_Paragraph" id="pageElement_Confirmation_DeleteItem">
-							You are about to launch all [] shortcuts of the category [].
-						</p>
-					</div>
-					<div class="Confirmation_Bottom">
-						<h4 class="Confirmation_Bottom_Button_SecondaryAction" id="Confirmation_LaunchAllLinks" onclick="close_Subwindow(this.id)">
-							Cancel
-						</h4>
-						<h4 class="Confirmation_Bottom_Button_PrimaryAction" onclick="trigger_launchAllTabs()">
-							Launch all
-						</h4>
-					</div>
+			<div class="Confirmation">
+				<h3 class="Confirmation_Title">
+					Are you sure?
+				</h3>
+				<div class="Confirmation_Content">
+					<p class="General_Paragraph" id="pageElement_Confirmation_Category_Launch_Text">
+						You are about to launch all [] shortcuts of the category [].
+					</p>
+				</div>
+				<div class="Confirmation_Bottom">
+					<h4 class="Confirmation_Bottom_Button_SecondaryAction" id="Confirmation_LaunchAllLinks" onclick="close_Subwindow(this.id)">
+						Cancel
+					</h4>
+					<h4 class="Confirmation_Bottom_Button_PrimaryAction" onclick="trigger_launchAllTabs()">
+						Launch all
+					</h4>
 				</div>
 			</div>
+		</div>
 		
 		<!-- Blurs the background -->
 		<div class="General_BlurBG HomePageBlur" id="pageElement_WallpaperBlur">
@@ -736,10 +745,10 @@
 				</div>
 				<div class="Header_Buttons" id="pageElement_Header_Buttons">
 					
-					<div class="Header_QuickSearchBar" id="pageElement_QuickSearchBar">
+					<!-- <div class="Header_QuickSearchBar" id="pageElement_QuickSearchBar">
 						<input class="Header_QuickSearchBar_Input" placeholder="Internet search" id="pageElement_SearchQuery"></input>
 						<img src="Assets/Icons/icon_search.png" class="Header_QuickSearchBar_Search" id="headerMain" onclick="search_Query(this.id)" onsubmit="search_Query(this.id)"></img>
-					</div>
+					</div> -->
 					<!--<a href="DL_ShortcutEditor.html">
 						<h3 class="Header_Buttons_Item">
 						Shortcut editor
@@ -848,10 +857,14 @@
 				</a>
 			</div>
 			<div class="Sidebar_CategoryNavigation" id="pageElement_Sidebar_CategoryNavigation" style="width: 0px">
+				<p class="Sidebar_CategoryNavigation_LaunchCategory" onclick="open_Subwindow('Category_Launcher'), toggle_Sidebar_CategoryNavigation()">
+					Launch all shortcuts from a category
+				</p>
 				<p class="Sidebar_CategoryNavigation_Title">
 					Category Navigation
 					<img src="Assets/Icons/icon_close.png" class="Sidebar_CategoryNavigation_Title_Close" onclick="toggle_Sidebar_CategoryNavigation()"></img>
 				</p>
+				
 			</div>
 			
 			<!--<div class="Subwindow_Blur" id="subwindow_PRIVATE_Elmer_Transfer">
@@ -899,96 +912,31 @@
 				<h1 class="Greeting_Text" id="pageElement_Greeting">
 					Good Evening
 				</h1>
-				<div id="pageElement_ContentContainer">
-					<!--<div class="Category">
-						<span class="anchor" id="anchor_category_test1"></span>
-						<div class="Category_Label" id="category_test1" onclick="toggle_Category(this.id)">
-						<img class="Category_Label_Icon" src="Assets/Icons/favicon_old.png"></img>
-						<h1 class="Category_Label_Text">
-						Category
+				<div id="pageElement_ContentContainer" class="EST_Card_Container">
+					<div class="EST_Card_Item">
+						<h1 class="EST_Card_Stat_Big_Number">
+							PHP 1,234
 						</h1>
-						<img class="Category_Label_Toggle" src="Assets/Icons/icon_downArrow.png" id="arrow_category_test1"></img>
-						</div>
-						<div id="content_category_test1" class="Category_Content_Container">
-						<div class="Category_Shortcuts">
-						<div class="Shortcut_Item">
-						Item 1
-						</div>
-						<div class="Shortcut_Item">
-						Item 2
-						</div>
-						<div class="Shortcut_Item">
-						Item 3
-						</div>
-						<div class="Shortcut_Item">
-						Item 4
-						</div>
-						<div class="Shortcut_Item">
-						Item 5
-						</div>
-						<div class="Shortcut_Item">
-						Item 6
-						</div>
-						<div class="Shortcut_Item">
-						Item 7
-						</div>
-						<div class="Shortcut_Item">
-						Item 8
-						</div>
-						</div>
-						<div class="Category_Folder">
-						<div class="Category_Folder_Item">
-						<div class="Category_Folder_Item_Title">
-						Folder 1
-						</div>
-						<div class="Category_Folder_Item_List">
-						<p class="Category_Folder_Item_List_Item">
-						Item 1
-						</p>
-						<p class="Category_Folder_Item_List_Item">
-						Item 2
-						</p>
-						<p class="Category_Folder_Item_List_Item">
-						Item 3
-						</p>
-						</div>
-						</div>
-						<div class="Category_Folder_Item">
-						<div class="Category_Folder_Item_Title">
-						Folder 2
-						</div>
-						<div class="Category_Folder_Item_List">
-						<p class="Category_Folder_Item_List_Item">
-						Item 1
-						</p>
-						<p class="Category_Folder_Item_List_Item">
-						Item 2
-						</p>
-						<p class="Category_Folder_Item_List_Item">
-						Item 3
-						</p>
-						</div>
-						</div>
-						<div class="Category_Folder_Item">
-						<div class="Category_Folder_Item_Title">
-						Folder 3
-						</div>
-						<div class="Category_Folder_Item_List">
-						<p class="Category_Folder_Item_List_Item">
-						Item 1
-						</p>
-						<p class="Category_Folder_Item_List_Item">
-						Item 2
-						</p>
-						<p class="Category_Folder_Item_List_Item">
-						Item 3
-						</p>
-						</div>
-						</div>
-						</div>
-						</div>
-						</div>
-					-->
+						<h3 class="EST_Card_Stat_Small_Text">
+							Total savings as of December 1, 2022
+						</h3>
+					</div>
+					<div class="EST_Card_Item">
+						<h1 class="EST_Card_Stat_Big_Number">
+							PHP 235
+						</h1>
+						<h3 class="EST_Card_Stat_Small_Text">
+							Wallet content
+						</h3>
+					</div>
+					<div class="EST_Card_Item">
+						<h1 class="EST_Card_Stat_Big_Number">
+							PHP 145
+						</h1>
+						<h3 class="EST_Card_Stat_Small_Text">
+							Total expenses for today
+						</h3>
+					</div>
 					<img src="Assets/Images/ShortcutLibraryEmpty_HomePage.png" class="pageElement_LibraryEmptyNotif" id="pageElement_LibraryEmptyNotif"></img>
 				</div>
 				

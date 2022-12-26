@@ -1,0 +1,63 @@
+body{
+	padding: 50px;
+	margin: 0px;
+	background-color: #101820;
+}
+
+a{
+	text-decoration: none;
+}
+
+button:focus{
+	outline: none;
+}
+
+.SavedBalance{
+	width: 1fr;
+	height: 300px;
+	background-color: #f2aa4c;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.SavedBalance_Text{
+	font-family: Product Sans;
+	font-size: 150px;
+	margin: 0;
+}
+
+.SavedBalance_Subtext{
+	font-family: Product Sans;
+	font-size: 50px;
+	margin: 0;
+}
+
+.SavedBalance_ActionButtons{
+	display: grid;
+	width: 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	margin-top: 10px;
+	height: 100px;
+}
+
+.SavedBalance_ActionButtons_Button{
+	margin: 0;
+	background-color: #f2aa4c;
+	border-radius: 30px;
+	outline: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.SavedBalance_ActionButtons_Button_Text{
+	font-family: Product Sans;
+	font-size: 50px;
+	margin: 0;
+	text-align: center;
+}
+	
