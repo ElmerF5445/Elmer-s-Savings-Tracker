@@ -60,4 +60,30 @@ button:focus{
 	margin: 0;
 	text-align: center;
 }
+
+.MenuList{
+	display: grid;
+	width: 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 10px;
+	margin-top: 50px;
+	height: auto;
+}
+
+.MenuList_Item{
+	width: 1fr;
+	display: flex;
+	align-items: center;
+	border-radius: 20px;
+	background-color: #242424;
+	padding-left: 10px;
+	height: 200px;
+}
+
+.MenuList_Item_Text{
+	font-family: Product Sans;
+	font-size: 50px;
+	margin-left: 10px;
+	color: #f2aa4c;
+}
 	
