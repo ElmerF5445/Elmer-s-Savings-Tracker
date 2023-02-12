@@ -3,6 +3,8 @@
 	This file contains all the JavaScript functionality for Doodle Launcher
 */
 
+var ST_CurrentBalance;
+
 var VersionTitle = "Savings Tracker";
 var VersionNumber = "Public Preview 1";
 var ContinuityVersionNumber = "1.0"
@@ -65,99 +67,99 @@ function OnloadTasks(){
 	generate_Launcher_HeaderButtons(PageName);
 	switch (PageName){
 		case "EST_Main.html":
-			pageProperty_enableGreetings = 1;
-			var pageProperty_showSidebarToggle = 0;
-			var pageProperty_enableSidebar = 0;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 0;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			var pageProperty_enableCategoryNavigation = 0;
-			document.getElementById("pageElement_QuickSearchBar").style.display = "none";
-			pageProperty_PageTitle = "Home";
-			check_Version();
-			// Generator_Render_Categories();
-			/*const SE_Array_Category_Index = ["fillerCategory", "TEST_Category_1", "TEST_Category_2", "TEST_Category_3", "Education", "Elmer Elmer", "Socials"];
-			localStorage.setItem(key_Index_Category, JSON.stringify(SE_Array_Category_Index));*/
-			hide_ToggleableElements();
-			setTimeout(start_Animations, 2500);
-			enableGreetings = 1;
-			
-			// generate_ProfileSelector();
-			if (Appearance_Behavior_BlurHomeWallpaper == true || Appearance_Behavior_BlurHomeWallpaper == "true"){
-				document.getElementById("pageElement_WallpaperBlur").style.display = "block";
+		pageProperty_enableGreetings = 1;
+		var pageProperty_showSidebarToggle = 0;
+		var pageProperty_enableSidebar = 0;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 0;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		var pageProperty_enableCategoryNavigation = 0;
+		document.getElementById("pageElement_QuickSearchBar").style.display = "none";
+		pageProperty_PageTitle = "Home";
+		check_Version();
+		// Generator_Render_Categories();
+		/*const SE_Array_Category_Index = ["fillerCategory", "TEST_Category_1", "TEST_Category_2", "TEST_Category_3", "Education", "Elmer Elmer", "Socials"];
+		localStorage.setItem(key_Index_Category, JSON.stringify(SE_Array_Category_Index));*/
+		hide_ToggleableElements();
+		setTimeout(start_Animations, 2500);
+		enableGreetings = 1;
+		
+		// generate_ProfileSelector();
+		if (Appearance_Behavior_BlurHomeWallpaper == true || Appearance_Behavior_BlurHomeWallpaper == "true"){
+			document.getElementById("pageElement_WallpaperBlur").style.display = "block";
 			} else {
-				document.getElementById("pageElement_WallpaperBlur").style.display = "none";
-			}
+			document.getElementById("pageElement_WallpaperBlur").style.display = "none";
+		}
 		break;
 		case "DL_ShortcutEditor.html":
-			pageProperty_enableGreetings = 1;
-			var pageProperty_showSidebarToggle = 1;
-			var pageProperty_enableSidebar = 1;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 0;
-			var pageProperty_enableCategoryNavigation = 0;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			pageProperty_PageTitle = "Shortcut Editor";
-			//SE_Render_List_TableView();
-			Generator_Render_Categories();
-			//render_Categories_TableView();
-			Generator_Render_Categories_TableView();
-			SE_Create_SwapperList();
-			SE_Create_SwapperList_Shortcuts();
-			setTimeout(start_Animations, 2500);
-			SE_CreateDropdown();
+		pageProperty_enableGreetings = 1;
+		var pageProperty_showSidebarToggle = 1;
+		var pageProperty_enableSidebar = 1;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 0;
+		var pageProperty_enableCategoryNavigation = 0;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		pageProperty_PageTitle = "Shortcut Editor";
+		//SE_Render_List_TableView();
+		Generator_Render_Categories();
+		//render_Categories_TableView();
+		Generator_Render_Categories_TableView();
+		SE_Create_SwapperList();
+		SE_Create_SwapperList_Shortcuts();
+		setTimeout(start_Animations, 2500);
+		SE_CreateDropdown();
 		break;
 		case "DL_Clock.html":
-			pageProperty_enableGreetings = 1;
-			var pageProperty_showSidebarToggle = 1;
-			var pageProperty_enableSidebar = 1;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 0;
-			var pageProperty_enableCategoryNavigation = 0;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			pageProperty_PageTitle = "Clock";
+		pageProperty_enableGreetings = 1;
+		var pageProperty_showSidebarToggle = 1;
+		var pageProperty_enableSidebar = 1;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 0;
+		var pageProperty_enableCategoryNavigation = 0;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		pageProperty_PageTitle = "Clock";
 		break;
 		case "DL_PomodoroTimer.html":
-			pageProperty_enableGreetings = 0;
-			var pageProperty_showSidebarToggle = 0;
-			var pageProperty_enableSidebar = 0;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 0;
-			var pageProperty_enableCategoryNavigation = 0;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			pageProperty_PageTitle = "Pomodoro Timer";
+		pageProperty_enableGreetings = 0;
+		var pageProperty_showSidebarToggle = 0;
+		var pageProperty_enableSidebar = 0;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 0;
+		var pageProperty_enableCategoryNavigation = 0;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		pageProperty_PageTitle = "Pomodoro Timer";
 		break;
 		case "DL_Settings.html":
-			pageProperty_enableGreetings = 0;
-			var pageProperty_showSidebarToggle = 1;
-			var pageProperty_enableSidebar = 1;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 1;
-			var pageProperty_enableCategoryNavigation = 0;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			pageProperty_PageTitle = "Settings";
-			Settings_LoadSettingValues();
-			set_Version_Settings();
+		pageProperty_enableGreetings = 0;
+		var pageProperty_showSidebarToggle = 1;
+		var pageProperty_enableSidebar = 1;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 1;
+		var pageProperty_enableCategoryNavigation = 0;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		pageProperty_PageTitle = "Settings";
+		Settings_LoadSettingValues();
+		set_Version_Settings();
 		break;
 		case "DL_Settings_Changelogs.html":
-			pageProperty_enableGreetings = 0;
-			var pageProperty_showSidebarToggle = 0;
-			var pageProperty_enableSidebar = 0;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 0;
-			var pageProperty_enableCategoryNavigation = 1;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			pageProperty_PageTitle = "Changelogs";
+		pageProperty_enableGreetings = 0;
+		var pageProperty_showSidebarToggle = 0;
+		var pageProperty_enableSidebar = 0;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 0;
+		var pageProperty_enableCategoryNavigation = 1;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		pageProperty_PageTitle = "Changelogs";
 		break;
 		case "DL_ReminderAndTodoList.html":
-			pageProperty_enableGreetings = 0;
-			var pageProperty_showSidebarToggle = 0;
-			var pageProperty_enableSidebar = 0;
-			var pageProperty_enableCategoryLabelIcons = 0;
-			var pageProperty_enableTabContainers = 0;
-			var pageProperty_enableCategoryNavigation = 0;
-			var pageProperty_showSidebarToggle_CategoryNavigation = 0;
-			pageProperty_PageTitle = "Tasker";
+		pageProperty_enableGreetings = 0;
+		var pageProperty_showSidebarToggle = 0;
+		var pageProperty_enableSidebar = 0;
+		var pageProperty_enableCategoryLabelIcons = 0;
+		var pageProperty_enableTabContainers = 0;
+		var pageProperty_enableCategoryNavigation = 0;
+		var pageProperty_showSidebarToggle_CategoryNavigation = 0;
+		pageProperty_PageTitle = "Tasker";
 		break;
 	}
 	console.log("Setting page properties with the following values: "+pageProperty_showSidebarToggle+" | "+pageProperty_enableCategoryLabelIcons+" | "+pageProperty_enableSidebar+" | "+pageProperty_enableTabContainers);
@@ -461,16 +463,16 @@ function generate_Launcher_HeaderButtons(pageName){
 	let Generator_HeaderButtons_OnclickAction = [];
 	switch (pageName){
 		case "DL_ShortcutEditor.html":
-			Generator_HeaderButtons_Text = ["Add Item", "Re-order categories", "Re-order shortcuts", "How to use"];
-			Generator_HeaderButtons_Icon = ["Assets/Icons/icon_ExperimentalFeature.png", "Assets/Icons/icon_ExperimentalFeature.png", "Assets/Icons/icon_ExperimentalFeature.png", "Assets/Icons/icon_ExperimentalFeature.png"];
-			Generator_HeaderButtons_ID = ["AddItem", "SwapList_Category", "Swaplist_Shortcut", "Tutorial_ShortcutEditor"];
-			Generator_HeaderButtons_OnclickAction = ["open_Subwindow(this.id)", "open_Subwindow(this.id)", "open_Subwindow(this.id)", "open_Subwindow(this.id)"];
+		Generator_HeaderButtons_Text = ["Add Item", "Re-order categories", "Re-order shortcuts", "How to use"];
+		Generator_HeaderButtons_Icon = ["Assets/Icons/icon_ExperimentalFeature.png", "Assets/Icons/icon_ExperimentalFeature.png", "Assets/Icons/icon_ExperimentalFeature.png", "Assets/Icons/icon_ExperimentalFeature.png"];
+		Generator_HeaderButtons_ID = ["AddItem", "SwapList_Category", "Swaplist_Shortcut", "Tutorial_ShortcutEditor"];
+		Generator_HeaderButtons_OnclickAction = ["open_Subwindow(this.id)", "open_Subwindow(this.id)", "open_Subwindow(this.id)", "open_Subwindow(this.id)"];
 		break;
 		case "DL_Settings.html":
-			Generator_HeaderButtons_Text = ["Save changes"];
-			Generator_HeaderButtons_Icon = ["Assets/Icons/icon_ExperimentalFeature.png"];
-			Generator_HeaderButtons_ID = [""];
-			Generator_HeaderButtons_OnclickAction = ["Settings_ApplyChanges()"];
+		Generator_HeaderButtons_Text = ["Save changes"];
+		Generator_HeaderButtons_Icon = ["Assets/Icons/icon_ExperimentalFeature.png"];
+		Generator_HeaderButtons_ID = [""];
+		Generator_HeaderButtons_OnclickAction = ["Settings_ApplyChanges()"];
 		break;
 	}
 	for (a = 0; a != Generator_HeaderButtons_Text.length; a++){
@@ -987,7 +989,7 @@ function toggle_Category_All(){
 var subwindow_activeSubwindow;
 function open_Subwindow(ID){
 	var subwindowElement = document.getElementById("subwindow_"+ID);
-	subwindowElement.style.display = "block";
+	subwindowElement.style.display = "flex";
 	subwindowElement.style.animationFillMode = "forwards";
 	subwindowElement.style.animationName = "opening_Subwindow";
 	subwindowElement.style.animationDuration = "0.3s";
@@ -1342,94 +1344,94 @@ function trigger_createToast(type){
 		toast_Subtitle.classList.add("ToastNotif_Toast_URL");
 		switch(type){
 			case "success":
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_linkAdded.png");
-				toast_Title.innerHTML = "I am success";
-				toast_Subtitle.innerHTML = "LMAO its SuccessToastYT he's roasty toasty who would've thought it would make the news papers LMAO LOL FR FR TBH";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_linkAdded.png");
+			toast_Title.innerHTML = "I am success";
+			toast_Subtitle.innerHTML = "LMAO its SuccessToastYT he's roasty toasty who would've thought it would make the news papers LMAO LOL FR FR TBH";
 			break;
 			case "failed":
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_linkError.png");
-				toast_Title.innerHTML = "Fail :(";
-				toast_Subtitle.innerHTML = "uncooked toast";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_linkError.png");
+			toast_Title.innerHTML = "Fail :(";
+			toast_Subtitle.innerHTML = "uncooked toast";
 			break;
 			case "SE_FormNotFilled": //When not all of the required fields are filled
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_linkError.png");
-				toast_Title.innerHTML = "Item not added";
-				toast_Subtitle.innerHTML = "Make sure that you've filled all of the required fields";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_linkError.png");
+			toast_Title.innerHTML = "Item not added";
+			toast_Subtitle.innerHTML = "Make sure that you've filled all of the required fields";
 			break;
 			case "SE_CategoryCreated": //When a category in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_linkAdded.png");
-				toast_Title.innerHTML = "Category added";
-				toast_Subtitle.innerHTML = "Category named '"+SE_CreateItem_categoryTitle+"' has been created.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_linkAdded.png");
+			toast_Title.innerHTML = "Category added";
+			toast_Subtitle.innerHTML = "Category named '"+SE_CreateItem_categoryTitle+"' has been created.";
 			break;
 			case "SE_ShortcutCreated": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_linkAdded.png");
-				toast_Title.innerHTML = "Shortcut added";
-				toast_Subtitle.innerHTML = "Shortcut named '"+SE_CreateItem_ShortcutText+"' with a URL of '"+SE_CreateItem_ShortcutURL+"' has been created.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_linkAdded.png");
+			toast_Title.innerHTML = "Shortcut added";
+			toast_Subtitle.innerHTML = "Shortcut named '"+SE_CreateItem_ShortcutText+"' with a URL of '"+SE_CreateItem_ShortcutURL+"' has been created.";
 			break;
 			case "Settings_FileNotFound": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_error.png");
-				toast_Title.innerHTML = "Error";
-				toast_Subtitle.innerHTML = "We couldn't find the file you're referring to. Double check the file name, type, and make sure it is in the Assets/Background folder.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_error.png");
+			toast_Title.innerHTML = "Error";
+			toast_Subtitle.innerHTML = "We couldn't find the file you're referring to. Double check the file name, type, and make sure it is in the Assets/Background folder.";
 			break;
 			case "Settings_SaveSuccess": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
-				toast_Title.innerHTML = "Settings saved";
-				toast_Subtitle.innerHTML = "Settings have been successfully saved and applied.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
+			toast_Title.innerHTML = "Settings saved";
+			toast_Subtitle.innerHTML = "Settings have been successfully saved and applied.";
 			break;
 			case "ShortcutEditor_ListUpdated": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
-				toast_Title.innerHTML = "List updated";
-				toast_Subtitle.innerHTML = "Changes had been saved.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
+			toast_Title.innerHTML = "List updated";
+			toast_Subtitle.innerHTML = "Changes had been saved.";
 			break;
 			case "ShortcutEditor_CopiedToClipboard": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_changelog.png");
-				toast_Title.innerHTML = "Copied!";
-				toast_Subtitle.innerHTML = "Text has been copied to the clipboard.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_changelog.png");
+			toast_Title.innerHTML = "Copied!";
+			toast_Subtitle.innerHTML = "Text has been copied to the clipboard.";
 			break;
 			case "SearchBar_NoQuery": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_Search.png");
-				toast_Title.innerHTML = "Search not made";
-				toast_Subtitle.innerHTML = "Type something in the search bar to do the search.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_Search.png");
+			toast_Title.innerHTML = "Search not made";
+			toast_Subtitle.innerHTML = "Type something in the search bar to do the search.";
 			break;
 			case "Presets_Set": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
-				toast_Title.innerHTML = "Preset applied";
-				toast_Subtitle.innerHTML = "The selected preset has been successfully applied to the values table. Click 'Save Settings' to save changes.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
+			toast_Title.innerHTML = "Preset applied";
+			toast_Subtitle.innerHTML = "The selected preset has been successfully applied to the values table. Click 'Save Settings' to save changes.";
 			break;
 			case "Settings_FormEmpty": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_error.png");
-				toast_Title.innerHTML = "Error";
-				toast_Subtitle.innerHTML = "The input box required is empty.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_error.png");
+			toast_Title.innerHTML = "Error";
+			toast_Subtitle.innerHTML = "The input box required is empty.";
 			break;
 			case "LaunchCategory_Before":
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_others.png");
-				toast_Title.innerHTML = "Launching...";
-				toast_Subtitle.innerHTML = "Your shortcuts should be opening on their new tabs now.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_others.png");
+			toast_Title.innerHTML = "Launching...";
+			toast_Subtitle.innerHTML = "Your shortcuts should be opening on their new tabs now.";
 			break;
 			case "LaunchCategory_After":
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_others.png");
-				toast_Title.innerHTML = "Shortcuts launched";
-				toast_Subtitle.innerHTML = "All shortcuts from the category has been opened.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_others.png");
+			toast_Title.innerHTML = "Shortcuts launched";
+			toast_Subtitle.innerHTML = "All shortcuts from the category has been opened.";
 			break;
 			case "ShortcutEditor_InvalidCharacter": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_error.png");
-				toast_Title.innerHTML = "Error";
-				toast_Subtitle.innerHTML = "The character ';' is not accepted.";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_error.png");
+			toast_Title.innerHTML = "Error";
+			toast_Subtitle.innerHTML = "The character ';' is not accepted.";
 			break;
 			case "NotImplemented": //When a shortcut in Shortcut Editor is successfully created
-				toast_Icon.setAttribute("src", "Assets/Icons/favicon.png");
-				toast_Title.innerHTML = "Not available";
-				toast_Subtitle.innerHTML = "This feature is not implemented properly yet.";
+			toast_Icon.setAttribute("src", "Assets/Icons/favicon.png");
+			toast_Title.innerHTML = "Not available";
+			toast_Subtitle.innerHTML = "This feature is not implemented properly yet.";
 			break;
 			case "dev_EnableCounter":
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
-				toast_Title.innerHTML = "Dev Counter Enabled";
-				toast_Subtitle.innerHTML = "Enabled";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_check.png");
+			toast_Title.innerHTML = "Dev Counter Enabled";
+			toast_Subtitle.innerHTML = "Enabled";
 			break;
 			case "dev_EnableCounter":
-				toast_Icon.setAttribute("src", "Assets/Icons/icon_close.png");
-				toast_Title.innerHTML = "Dev Counter Disabled";
-				toast_Subtitle.innerHTML = "Disabled";
+			toast_Icon.setAttribute("src", "Assets/Icons/icon_close.png");
+			toast_Title.innerHTML = "Dev Counter Disabled";
+			toast_Subtitle.innerHTML = "Disabled";
 			break;
 		}
 		document.getElementById("toast_Div_"+toast_Count).appendChild(toast_Icon);
@@ -1898,56 +1900,56 @@ function SE_CreateItem_StringTextTest(){
 	var SE_StringTextTest_Score2 = 1;
 	switch (SE_AddItem_TypeSelected){
 		case "select_Category":
-			SE_CreateItem_categoryTitle = document.getElementById("form_SE_Category").value; //Gets the form answer
-			for (a = 1; a < SE_CreateItem_categoryTitle.length; a++){
-				console.log("Checking string input character "+a);
-				console.log("Read character: "+SE_CreateItem_categoryTitle.charAt(a));
-				if (SE_CreateItem_categoryTitle.charAt(a) != ";"){
-					console.log("Character clear");
-					SE_StringTextTest_Score++;
+		SE_CreateItem_categoryTitle = document.getElementById("form_SE_Category").value; //Gets the form answer
+		for (a = 1; a < SE_CreateItem_categoryTitle.length; a++){
+			console.log("Checking string input character "+a);
+			console.log("Read character: "+SE_CreateItem_categoryTitle.charAt(a));
+			if (SE_CreateItem_categoryTitle.charAt(a) != ";"){
+				console.log("Character clear");
+				SE_StringTextTest_Score++;
 				} else {
-					console.log("Character ';' found");
-				}
+				console.log("Character ';' found");
 			}
-			console.log("Test score: "+SE_StringTextTest_Score);
-			console.log("Length: "+SE_CreateItem_categoryTitle.length);
-			if (SE_StringTextTest_Score == SE_CreateItem_categoryTitle.length){
-				SE_CreateItem();
+		}
+		console.log("Test score: "+SE_StringTextTest_Score);
+		console.log("Length: "+SE_CreateItem_categoryTitle.length);
+		if (SE_StringTextTest_Score == SE_CreateItem_categoryTitle.length){
+			SE_CreateItem();
 			} else {
-				trigger_createToast("ShortcutEditor_InvalidCharacter");
-			}
+			trigger_createToast("ShortcutEditor_InvalidCharacter");
+		}
 		break;
 		case "select_Shortcut":
-			SE_CreateItem_ShortcutText = document.getElementById("form_SE_Shortcut_Title").value;
-			SE_CreateItem_ShortcutURL = document.getElementById("form_SE_Shortcut_URL").value;
-			for (a = 1; a < SE_CreateItem_ShortcutText.length; a++){
-				console.log("Checking string input character "+a);
-				console.log("Read character: "+SE_CreateItem_ShortcutText.charAt(a));
-				if (SE_CreateItem_ShortcutText.charAt(a) != ";"){
-					console.log("Character clear");
-					SE_StringTextTest_Score++;
+		SE_CreateItem_ShortcutText = document.getElementById("form_SE_Shortcut_Title").value;
+		SE_CreateItem_ShortcutURL = document.getElementById("form_SE_Shortcut_URL").value;
+		for (a = 1; a < SE_CreateItem_ShortcutText.length; a++){
+			console.log("Checking string input character "+a);
+			console.log("Read character: "+SE_CreateItem_ShortcutText.charAt(a));
+			if (SE_CreateItem_ShortcutText.charAt(a) != ";"){
+				console.log("Character clear");
+				SE_StringTextTest_Score++;
 				} else {
-					console.log("Character ';' found");
-				}
+				console.log("Character ';' found");
 			}
-			for (b = 1; b < SE_CreateItem_ShortcutURL.length; b++){
-				console.log("Checking string input character "+b);
-				console.log("Read character: "+SE_CreateItem_ShortcutURL.charAt(b));
-				if (SE_CreateItem_ShortcutURL.charAt(b) != ";"){
-					console.log("Character clear");
-					SE_StringTextTest_Score2++;
+		}
+		for (b = 1; b < SE_CreateItem_ShortcutURL.length; b++){
+			console.log("Checking string input character "+b);
+			console.log("Read character: "+SE_CreateItem_ShortcutURL.charAt(b));
+			if (SE_CreateItem_ShortcutURL.charAt(b) != ";"){
+				console.log("Character clear");
+				SE_StringTextTest_Score2++;
 				} else {
-					console.log("Character ';' found");
-				}
+				console.log("Character ';' found");
 			}
-			console.log("Test1 score: "+SE_StringTextTest_Score);
-			console.log("Test2 score: "+SE_StringTextTest_Score2);
-			console.log("Length: "+SE_CreateItem_ShortcutText.length);
-			if (SE_StringTextTest_Score == SE_CreateItem_ShortcutText.length &&SE_StringTextTest_Score2 == SE_CreateItem_ShortcutURL.length){
-				SE_CreateItem();
+		}
+		console.log("Test1 score: "+SE_StringTextTest_Score);
+		console.log("Test2 score: "+SE_StringTextTest_Score2);
+		console.log("Length: "+SE_CreateItem_ShortcutText.length);
+		if (SE_StringTextTest_Score == SE_CreateItem_ShortcutText.length &&SE_StringTextTest_Score2 == SE_CreateItem_ShortcutURL.length){
+			SE_CreateItem();
 			} else {
-				trigger_createToast("ShortcutEditor_InvalidCharacter");
-			}
+			trigger_createToast("ShortcutEditor_InvalidCharacter");
+		}
 		break;
 	}
 }
@@ -2163,25 +2165,25 @@ function SE_Generate_ExportList(){
 		console.log(SE_ExportList_Text2);
 		document.getElementById("pageElement_Export_Text").innerHTML = SE_ExportList_Text2;
 		var SE_ExportList_Text1 = SE_ExportList_Text2; // Previous text
-
+		
 	}
 }
 /* let text = document.getElementById('myText').innerHTML;
-  const copyContent = async () => {
+	const copyContent = async () => {
     try {
-      await navigator.clipboard.writeText(text);
-      console.log('Content copied to clipboard');
+	await navigator.clipboard.writeText(text);
+	console.log('Content copied to clipboard');
     } catch (err) {
-      console.error('Failed to copy: ', err);
+	console.error('Failed to copy: ', err);
     }
-  } */
+} */
 function SE_Export_CopyToClipboard(){
 	navigator.clipboard.writeText(document.getElementById("pageElement_Export_Text").innerText).then(() => {
-	  console.log('Content copied to clipboard');
-	  /* Resolved - text copied to clipboard successfully */
-	},() => {
-	  console.error('Failed to copy');
-	  /* Rejected - text failed to copy to the clipboard */
+		console.log('Content copied to clipboard');
+		/* Resolved - text copied to clipboard successfully */
+		},() => {
+		console.error('Failed to copy');
+		/* Rejected - text failed to copy to the clipboard */
 	});
 	trigger_createToast("ShortcutEditor_CopiedToClipboard");
 }
@@ -2203,14 +2205,14 @@ function SE_Import_ShortcutList(){
 	/* for (a = 0; a != SE_ImportList_Input.length; a++){
 		var SE_ImportList_WordDetect2 = SE_ImportList_WordDetect1.concat("", SE_ImportList_Input.charAt(a));
 		if (SE_ImportList_Input.charAt(a) == ";" && SE_ImportList_Input.charAt(a+1) != ";"){
-			; detected - Next string is Shortcut URL
-			SE_ImportList_ReadMode = "Shortcut_URL";
-			
+		; detected - Next string is Shortcut URL
+		SE_ImportList_ReadMode = "Shortcut_URL";
+		
 		} else if (SE_ImportList_Input.charAt(a) == ";" && SE_ImportList_Input.charAt(a+1) == ";"){
-			;; detected - Next string is Shortcut Name
-			SE_ImportList_ReadMode = "Shortcut_Name";
-			SE_ImportList_Shortcut_Name.push = SE_ImportList_WordDetect2;
-			SE_ImportList_WordDetect2 = "";
+		;; detected - Next string is Shortcut Name
+		SE_ImportList_ReadMode = "Shortcut_Name";
+		SE_ImportList_Shortcut_Name.push = SE_ImportList_WordDetect2;
+		SE_ImportList_WordDetect2 = "";
 		}
 		console.log(SE_ImportList_ReadMode);
 	} */
@@ -2219,14 +2221,14 @@ function SE_Import_ShortcutList(){
 		SE_ImportList_WordDetect1 = SE_ImportList_WordDetect2;
 		// console.log(SE_ImportList_WordDetect2);
 		if (SE_ImportList_Input.charAt(a) == ";"){
-			/* SE_ImportList_WordDetect1 == "";
-			SE_ImportList_WordDetect2 == "";
-			SE_ImportList_MainArray.push(SE_ImportList_WordDetect2);
-			console.log(SE_ImportList_MainArray);
-			SE_ImportList_WordDetect1 == "";
-			SE_ImportList_WordDetect2 == "";
-			//console.log("Found");
-			
+		/* SE_ImportList_WordDetect1 == "";
+		SE_ImportList_WordDetect2 == "";
+		SE_ImportList_MainArray.push(SE_ImportList_WordDetect2);
+		console.log(SE_ImportList_MainArray);
+		SE_ImportList_WordDetect1 == "";
+		SE_ImportList_WordDetect2 == "";
+		//console.log("Found");
+		
 		} 
 	} */
 	// Separates all characters into their own slots on an array
@@ -2241,14 +2243,14 @@ function SE_Import_ShortcutList(){
 			SE_ImportList_WordDetect3 = SE_ImportList_WordDetect2.replace(';', '');
 			if (b != 0){
 				SE_ImportList_WordDetect4 = SE_ImportList_WordDetect3.replace(' ', '');
-			} else {
+				} else {
 				SE_ImportList_WordDetect4 = SE_ImportList_WordDetect3;
 			}
 			SE_ImportList_Shortcut_Name.push(SE_ImportList_WordDetect4);
 			SE_ImportList_WordDetect1 = "";
 			SE_ImportList_WordDetect2 = "";
 			b++;
-		} else if (SE_ImportList_CharacterArray[b] == ";" && SE_ImportList_CharacterArray[b+1] != "; "){
+			} else if (SE_ImportList_CharacterArray[b] == ";" && SE_ImportList_CharacterArray[b+1] != "; "){
 			SE_ImportList_WordDetect3 = SE_ImportList_WordDetect2.replace(';', '');
 			SE_ImportList_WordDetect4 = SE_ImportList_WordDetect3.replace(' ', '');
 			SE_ImportList_Shortcut_URL.push(SE_ImportList_WordDetect4);
@@ -2286,7 +2288,7 @@ function SE_Import_ShortcutList(){
 		localStorage.setItem(SE_CreateItem_CategoryKey, JSON.stringify(SE_Array_ListText)); //Saves the updated array to the selected category key
 		localStorage.setItem(SE_CreateItem_CategoryKeyURL, JSON.stringify(SE_Array_ListURL)); //Saves the updated array to the selected category key
 		refresh_ShortcutEditor();
-	} else {
+		} else {
 		console.log("ERROR");
 	}
 }
@@ -4879,4 +4881,44 @@ function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
 }
 
+function ST_CheckFileExistence(){
+	if(localStorage.getItem("ST_Info_CurrentBalance") == null){
+		ST_CurrentBalance = 0;
+		const ST_CurrentBalance_Obj = {
+			ST_CurrentBalance: 0,
+		}
+		window.localStorage.setItem("ST_Info_CurrentBalance",JSON.stringify(ST_CurrentBalance_Obj));
+		console.log("No file detected, reset to 0");
+		ST_LoadInformation_Basic();
+		} else {
+		ST_LoadInformation_Basic();
+	}
+}
 
+function ST_LoadInformation_Basic(){
+	ST_CurrentBalance_Array = [];
+	ST_CurrentBalance_Data = Object.values(JSON.parse(localStorage.getItem("ST_Info_CurrentBalance")));
+	ST_CurrentBalance_Array.push(ST_CurrentBalance_Data[0]);
+	ST_CurrentBalance = ST_CurrentBalance_Array[0];
+	document.getElementById("pageElement_ST_CurrentBalance").innerHTML = "PHP "+ST_CurrentBalance;
+}
+var ST_CurrentBalance_Int;
+function ST_AddBalance(){
+	ST_CurrentBalance_Int = parseInt(ST_CurrentBalance) + parseInt(document.getElementById("ST_Input_Text").value);
+	const ST_CurrentBalance_Obj = {
+		ST_CurrentBalance_Obj: ST_CurrentBalance_Int,
+	}
+	window.localStorage.setItem("ST_Info_CurrentBalance",JSON.stringify(ST_CurrentBalance_Obj));
+	ST_LoadInformation_Basic();
+	document.getElementById("ST_Input_Text").value = "";
+}
+
+function ST_DeductBalance(){
+	ST_CurrentBalance_Int = parseInt(ST_CurrentBalance) - parseInt(document.getElementById("ST_Input_Text").value);
+	const ST_CurrentBalance_Obj = {
+		ST_CurrentBalance_Obj: ST_CurrentBalance_Int,
+	}
+	window.localStorage.setItem("ST_Info_CurrentBalance",JSON.stringify(ST_CurrentBalance_Obj));
+	ST_LoadInformation_Basic();
+	document.getElementById("ST_Input_Text").value = "";
+}
