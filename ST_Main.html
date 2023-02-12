@@ -1,46 +1,70 @@
 <html>
-<head>
-	<title>
-		Savings Tracker
-	</title>
-	<link rel="stylesheet" href="Scripts/ST_Stylesheet.css">
-	<link rel="stylesheet" href="Scripts/ST_Stylesheet_Animations.css">
-	<link rel="stylesheet" href="Scripts/ST_Stylesheet_Reference.css">
-	<link rel="icon" type="image/png" href="Assets/Icons/favicon_old.png" sizes="96x96">
-</head>
-<script src="Scripts/ST_Javascript.js"></script>
-<body>
-	<div class="SavedBalance">
-		<h3 class="SavedBalance_Subtext">
-			Your recorded savings
-		</h3>
-		<h1 class="SavedBalance_Text">
-			PHP 4,500
-		</h1>
-	</div>
-	<div class="SavedBalance_ActionButtons">
-		<div class="SavedBalance_ActionButtons_Button">
-			<h1 class="SavedBalance_ActionButtons_Button_Text">
-				Deduct
+	<head>
+		<title>
+			Savings Tracker
+		</title>
+		<link rel="stylesheet" href="Scripts/ST_Stylesheet.css">
+		<link rel="stylesheet" href="Scripts/ST_Stylesheet_Animations.css">
+		<link rel="stylesheet" href="Scripts/ST_Stylesheet_Reference.css">
+		<link rel="icon" type="image/png" href="Assets/Icons/favicon_old.png" sizes="96x96">
+	</head>
+	<script src="Scripts/ST_Javascript.js"></script>
+	<body onload="ST_CheckFileExistence()">
+		<div class="Header">
+			<img src="Assets/Icons/icon_hamburgermenu.png" class="Header_Button"></img>
+			<h1 class="Header_Title">
+				Savings Tracker
 			</h1>
 		</div>
-		<div class="SavedBalance_ActionButtons_Button">
-			<h1 class="SavedBalance_ActionButtons_Button_Text">
-				Add
-			</h1>
+		<div class="MainContent">
+			<div class="SavedBalance">
+				<h3 class="SavedBalance_Subtext">
+					Your recorded savings
+				</h3>
+				<h1 class="SavedBalance_Text" id="pageElement_ST_CurrentBalance">
+					PHP 4,500
+				</h1>
+			</div>
+			<div class="SavedBalance_ActionButtons">
+				<div class="SavedBalance_ActionButtons_Button">
+					<h1 class="SavedBalance_ActionButtons_Button_Text"onclick="ST_DeductBalance()">
+						Deduct
+					</h1>
+				</div>
+				<div class="SavedBalance_ActionButtons_Button" onclick="ST_AddBalance()">
+					<h1 class="SavedBalance_ActionButtons_Button_Text">
+						Add
+					</h1>
+				</div>
+			</div>
+			<input type="number" class="ST_Input_Text" placeholder="Enter amount here" id="ST_Input_Text"></input>
+			<div class="MenuList">
+				<div class="MenuList_Item">
+					<h4 class="MenuList_Item_Text">
+						Targets
+					</h4>
+				</div>
+				<div class="MenuList_Item">
+					<h4 class="MenuList_Item_Text">
+						Expenses
+					</h4>
+				</div>
+				<div class="MenuList_Item">
+					<h4 class="MenuList_Item_Text">
+						History
+					</h4>
+				</div>
+				<div class="MenuList_Item">
+					<h4 class="MenuList_Item_Text">
+						Stats
+					</h4>
+				</div>
+				<div class="MenuList_Item">
+					<h4 class="MenuList_Item_Text">
+						Information
+					</h4>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="MenuList">
-		<div class="MenuList_Item">
-			<h4 class="MenuList_Item_Text">
-				Targets
-			</h4>
-		</div>
-		<div class="MenuList_Item">
-			<h4 class="MenuList_Item_Text">
-				Expenses
-			</h4>
-		</div>
-	</div>
-</body>
+	</body>
 </html>
